@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shared\StarterKit.Blazor.WebAssembly.Shared.csproj" />
+    <ProjectReference Include="..\StarterKit.Blazor.WebAssembly.Shared\StarterKit.Blazor.WebAssembly.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
