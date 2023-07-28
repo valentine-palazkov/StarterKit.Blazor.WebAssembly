@@ -12,17 +12,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Client\StartKit.Blazor.WebAssembly.Client.csproj" />
-    <ProjectReference Include="..\Shared\StartKit.Blazor.WebAssembly.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StartKit.Blazor.WebAssembly.Client\StartKit.Blazor.WebAssembly.Client.csproj" />
+    <ProjectReference Include="..\StartKit.Blazor.WebAssembly.Shared\StartKit.Blazor.WebAssembly.Shared.csproj" />
   </ItemGroup>
 
 </Project>

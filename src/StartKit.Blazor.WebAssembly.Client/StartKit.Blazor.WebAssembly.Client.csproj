@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shared\StartKit.Blazor.WebAssembly.Shared.csproj" />
+    <ProjectReference Include="..\StartKit.Blazor.WebAssembly.Shared\StartKit.Blazor.WebAssembly.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
