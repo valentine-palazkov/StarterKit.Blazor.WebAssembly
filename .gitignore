@@ -74,3 +74,8 @@ artifacts/
 *.[Cc]ache
 # but keep track of directories ending in .cache
 !?*.[Cc]ache/
+
+#Ignore SQLite DB files
+*.db
+*.db-shm
+*.db-wal
