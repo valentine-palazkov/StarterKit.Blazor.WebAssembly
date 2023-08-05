@@ -6,7 +6,7 @@ namespace StarterKit.Blazor.WebAssembly.Server.Controllers
 {
     [Route("api/[controller]")]
     [Authorize(Roles = "Admin")]
-    public class SampleDataController : Controller
+    public class WeatherForecastController : Controller
     {
         private static string[] Summaries = new[]
         {
