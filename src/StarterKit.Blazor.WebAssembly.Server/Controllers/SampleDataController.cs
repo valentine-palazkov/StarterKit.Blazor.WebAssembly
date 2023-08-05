@@ -5,7 +5,7 @@ using StarterKit.Blazor.WebAssembly.Shared;
 namespace StarterKit.Blazor.WebAssembly.Server.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class SampleDataController : Controller
     {
         private static string[] Summaries = new[]

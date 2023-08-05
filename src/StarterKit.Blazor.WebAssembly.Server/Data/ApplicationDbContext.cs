@@ -2,10 +2,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using StarterKit.Blazor.WebAssembly.Server.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace StarterKit.Blazor.WebAssembly.Server.Data
 {
@@ -24,10 +20,9 @@ namespace StarterKit.Blazor.WebAssembly.Server.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
 
+            //Add default admin role to DB
+            builder.Entity<IdentityRole<Guid>>().HasData(new IdentityRole<Guid> { Id = new Guid("B01904E5-87C0-435A-892E-27B9ACF2B25F"), Name = "Admin", NormalizedName = "Admin".ToUpper() });
         }
 
     }

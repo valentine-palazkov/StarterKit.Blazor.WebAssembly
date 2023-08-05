@@ -18,8 +18,8 @@ builder.Services.Configure<IdentityOptions>(options =>
     // Password settings
     options.Password.RequireDigit = true;
     options.Password.RequiredLength = 6;
-    options.Password.RequireNonAlphanumeric = true;
-    options.Password.RequireUppercase = true;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
     options.Password.RequireLowercase = false;
 
     // Lockout settings
@@ -50,13 +50,6 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
-    {
-        //Note: Microsoft recommends to NOT migrate your database at Startup. 
-        //You should consider your migration strategy according to the guidelines.
-        serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>().Database.Migrate();
-    }
-
     app.UseWebAssemblyDebugging();
 }
 else
