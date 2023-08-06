@@ -8,16 +8,11 @@
 
   <ItemGroup>
   <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.9" />
-  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.9">
-    <PrivateAssets>all</PrivateAssets>
-    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-  </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.9" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\StarterKit.Blazor.WebAssembly.Client\StarterKit.Blazor.WebAssembly.Client.csproj" />
+    <ProjectReference Include="..\StarterKit.Blazor.WebAssembly.DataAccessLayer\StarterKit.Blazor.WebAssembly.DataAccessLayer.csproj" />
     <ProjectReference Include="..\StarterKit.Blazor.WebAssembly.Shared\StarterKit.Blazor.WebAssembly.Shared.csproj" />
   </ItemGroup>
 

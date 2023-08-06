@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace StarterKit.Blazor.WebAssembly.Server.Migrations
+namespace StarterKit.Blazor.WebAssembly.DataAccessLayer.Migrations
 {
     public partial class Init : Migration
     {

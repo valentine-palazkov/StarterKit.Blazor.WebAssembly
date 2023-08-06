@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using StarterKit.Blazor.WebAssembly.Server.Data;
-using StarterKit.Blazor.WebAssembly.Server.Models;
+using StarterKit.Blazor.WebAssembly.DataAccessLayer.Data;
+using StarterKit.Blazor.WebAssembly.DataAccessLayer.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-             options.UseSqlite("Filename=data.db"));
+             options.UseSqlite(builder.Configuration.GetConnectionString("DatabaseConnection")));
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
     .AddEntityFrameworkStores<ApplicationDbContext>()

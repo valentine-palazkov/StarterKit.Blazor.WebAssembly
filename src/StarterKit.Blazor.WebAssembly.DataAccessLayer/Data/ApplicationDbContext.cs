@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using StarterKit.Blazor.WebAssembly.Server.Models;
+using StarterKit.Blazor.WebAssembly.DataAccessLayer.Models;
 
-namespace StarterKit.Blazor.WebAssembly.Server.Data
+namespace StarterKit.Blazor.WebAssembly.DataAccessLayer.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {

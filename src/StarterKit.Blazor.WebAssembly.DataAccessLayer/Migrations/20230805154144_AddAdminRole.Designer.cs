@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using StarterKit.Blazor.WebAssembly.Server.Data;
+using StarterKit.Blazor.WebAssembly.DataAccessLayer.Data;
 
 #nullable disable
 
-namespace StarterKit.Blazor.WebAssembly.Server.Migrations
+namespace StarterKit.Blazor.WebAssembly.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230805154144_AddAdminRole")]
@@ -154,7 +154,7 @@ namespace StarterKit.Blazor.WebAssembly.Server.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("StarterKit.Blazor.WebAssembly.Server.Models.ApplicationUser", b =>
+            modelBuilder.Entity("StarterKit.Blazor.WebAssembly.DataAccessLayer.Models.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

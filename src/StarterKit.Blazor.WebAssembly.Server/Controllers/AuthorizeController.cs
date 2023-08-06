@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using StarterKit.Blazor.WebAssembly.Server.Models;
+using StarterKit.Blazor.WebAssembly.DataAccessLayer.Models;
 using StarterKit.Blazor.WebAssembly.Shared;
 
 namespace StarterKit.Blazor.WebAssembly.Server.Controllers
@@ -71,8 +71,6 @@ namespace StarterKit.Blazor.WebAssembly.Server.Controllers
                 IsAuthenticated = User.Identity.IsAuthenticated,
                 UserName = User.Identity.Name,
                 ExposedClaims = User.Claims
-                    //Optionally: filter the claims you want to expose to the client
-                    //.Where(c => c.Type == "test-claim")
                     .ToDictionary(c => c.Type, c => c.Value)
             };
         }

@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using StarterKit.Blazor.WebAssembly.Server.Data;
+using StarterKit.Blazor.WebAssembly.DataAccessLayer.Data;
 using System;
 
-namespace StarterKit.Blazor.WebAssembly.Server.Migrations
+namespace StarterKit.Blazor.WebAssembly.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20190502083628_Init")]
@@ -18,7 +18,7 @@ namespace StarterKit.Blazor.WebAssembly.Server.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.0.0-preview3.19153.1");
 
-            modelBuilder.Entity("StarterKit.Blazor.WebAssembly.Server.Models.ApplicationUser", b =>
+            modelBuilder.Entity("StarterKit.Blazor.WebAssembly.Server.DataAccessLayer.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();

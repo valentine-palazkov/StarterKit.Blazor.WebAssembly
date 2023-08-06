@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace StarterKit.Blazor.WebAssembly.Server.Migrations
+namespace StarterKit.Blazor.WebAssembly.DataAccessLayer.Migrations
 {
     /// <inheritdoc />
     public partial class AddAdminRole : Migration
