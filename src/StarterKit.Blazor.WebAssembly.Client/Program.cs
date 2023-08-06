@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Components.Authorization;
+﻿using Fluxor;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Fluxor;
 using StarterKit.Blazor.WebAssembly.Client;
 using StarterKit.Blazor.WebAssembly.Client.Services.Contracts;
 using StarterKit.Blazor.WebAssembly.Client.Services.Implementations;

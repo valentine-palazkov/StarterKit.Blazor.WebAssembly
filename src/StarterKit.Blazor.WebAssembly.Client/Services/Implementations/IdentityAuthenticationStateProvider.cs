@@ -1,15 +1,7 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.JSInterop;
 using StarterKit.Blazor.WebAssembly.Client.Services.Contracts;
 using StarterKit.Blazor.WebAssembly.Shared.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace StarterKit.Blazor.WebAssembly.Client.States
 {
@@ -57,7 +49,8 @@ namespace StarterKit.Blazor.WebAssembly.Client.States
                 var userInfo = await GetUserInfo();
                 if (userInfo.IsAuthenticated)
                 {
-                    var claims = new[] { new Claim(ClaimTypes.Name, userInfo.UserName) }.Concat(userInfo.ExposedClaims.Select(c => new Claim(c.Key, c.Value)));
+                    var claims = new[] { new Claim(ClaimTypes.Name, userInfo.UserName) }
+                        .Concat(userInfo.ExposedClaims.Select(c => new Claim(c.Key, c.Value)));
                     identity = new ClaimsIdentity(claims, "Server authentication");
                 }
             }

@@ -22,7 +22,12 @@ namespace StarterKit.Blazor.WebAssembly.DataAccessLayer.Data
             base.OnModelCreating(builder);
 
             //Add default admin role to DB
-            builder.Entity<IdentityRole<Guid>>().HasData(new IdentityRole<Guid> { Id = new Guid("B01904E5-87C0-435A-892E-27B9ACF2B25F"), Name = "Admin", NormalizedName = "Admin".ToUpper() });
+            builder.Entity<IdentityRole<Guid>>().HasData(new IdentityRole<Guid>
+            {
+                Id = new Guid("B01904E5-87C0-435A-892E-27B9ACF2B25F"),
+                Name = "Admin",
+                NormalizedName = "Admin".ToUpper()
+            });
         }
 
     }

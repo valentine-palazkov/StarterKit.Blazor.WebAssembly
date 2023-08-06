@@ -59,7 +59,6 @@ namespace StarterKit.Blazor.WebAssembly.Server.Controllers
         [HttpGet]
         public UserInfo UserInfo()
         {
-            //var user = await _userManager.GetUserAsync(HttpContext.User);
             return BuildUserInfo();
         }
 
