@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Fluxor" Version="5.9.0" />
     <PackageReference Include="Fluxor.Blazor.Web" Version="5.9.0" />
     <PackageReference Include="Fluxor.Blazor.Web.ReduxDevTools" Version="5.9.0" />
