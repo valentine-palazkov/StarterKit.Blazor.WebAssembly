@@ -1,4 +1,4 @@
-﻿using StarterKit.Blazor.WebAssembly.Shared;
+﻿using StarterKit.Blazor.WebAssembly.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +8,8 @@ namespace StarterKit.Blazor.WebAssembly.Client.Services.Contracts
 {
     public interface IAuthorizeApi
     {
-        Task Login(LoginParameters loginParameters);
-        Task Register(RegisterParameters registerParameters);
+        Task Login(LoginUserDto loginParameters);
+        Task Register(RegisterUserDto registerParameters);
         Task Logout();
         Task<UserInfo> GetUserInfo();
     }

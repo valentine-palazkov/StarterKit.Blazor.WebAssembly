@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
 using StarterKit.Blazor.WebAssembly.Client.Services.Contracts;
-using StarterKit.Blazor.WebAssembly.Shared;
+using StarterKit.Blazor.WebAssembly.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace StarterKit.Blazor.WebAssembly.Client.States
 {
     public class IdentityAuthenticationStateProvider : AuthenticationStateProvider
     {
-        private UserInfo _userInfoCache;
+        private UserInfo? _userInfoCache;
         private readonly IAuthorizeApi _authorizeApi;
 
         public IdentityAuthenticationStateProvider(IAuthorizeApi authorizeApi)
@@ -23,13 +23,13 @@ namespace StarterKit.Blazor.WebAssembly.Client.States
             this._authorizeApi = authorizeApi;
         }
 
-        public async Task Login(LoginParameters loginParameters)
+        public async Task Login(LoginUserDto loginParameters)
         {
             await _authorizeApi.Login(loginParameters);
             NotifyAuthenticationStateChanged(GetAuthenticationStateAsync());
         }
 
-        public async Task Register(RegisterParameters registerParameters)
+        public async Task Register(RegisterUserDto registerParameters)
         {
             await _authorizeApi.Register(registerParameters);
             NotifyAuthenticationStateChanged(GetAuthenticationStateAsync());

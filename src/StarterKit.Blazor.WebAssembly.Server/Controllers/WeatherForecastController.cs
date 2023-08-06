@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StarterKit.Blazor.WebAssembly.Shared;
+using StarterKit.Blazor.WebAssembly.Shared.Models;
 
 namespace StarterKit.Blazor.WebAssembly.Server.Controllers
 {

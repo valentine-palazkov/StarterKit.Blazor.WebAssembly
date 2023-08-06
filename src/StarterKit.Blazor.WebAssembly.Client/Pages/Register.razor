@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
                     <EditForm class="form-signin" OnValidSubmit="OnSubmit" Model="registerParameters">
-                        <DataAnnotationsValidator />
+                        <FluentValidationValidator />
 
                         <div class="form-floating mb-3">
                             <InputText id="inputUsername" class="form-control" @bind-Value="registerParameters.UserName" autofocus placeholder="Username" />
@@ -56,8 +56,8 @@
 
 @code {
 
-    RegisterParameters registerParameters { get; set; } = new RegisterParameters();
-    string error { get; set; }
+    RegisterUserDto registerParameters { get; set; } = new RegisterUserDto();
+    string? error { get; set; }
 
     async Task OnSubmit()
     {

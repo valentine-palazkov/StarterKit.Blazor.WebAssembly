@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
                     <EditForm class="form-signin" OnValidSubmit="OnSubmit" Model="loginParameters">
-                        <DataAnnotationsValidator />
+                        <FluentValidationValidator />
 
                         <div class="form-floating mb-3">
                             <InputText id="inputUsername" class="form-control" @bind-Value="loginParameters.UserName" autofocus placeholder="Username" />
@@ -56,8 +56,8 @@
 </div>
 
 @code {
-    LoginParameters loginParameters { get; set; } = new LoginParameters();
-    string error { get; set; }
+    LoginUserDto loginParameters { get; set; } = new LoginUserDto();
+    string? error { get; set; }
 
     async Task OnSubmit()
     {

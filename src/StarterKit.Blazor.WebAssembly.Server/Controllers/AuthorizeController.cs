@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StarterKit.Blazor.WebAssembly.DataAccessLayer.Models;
-using StarterKit.Blazor.WebAssembly.Shared;
+using StarterKit.Blazor.WebAssembly.Shared.Models;
 
 namespace StarterKit.Blazor.WebAssembly.Server.Controllers
 {
@@ -20,7 +20,7 @@ namespace StarterKit.Blazor.WebAssembly.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginParameters parameters)
+        public async Task<IActionResult> Login(LoginUserDto parameters)
         {
             var user = await _userManager.FindByNameAsync(parameters.UserName);
             if (user == null) return BadRequest("User does not exist");
@@ -34,14 +34,14 @@ namespace StarterKit.Blazor.WebAssembly.Server.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterParameters parameters)
+        public async Task<IActionResult> Register(RegisterUserDto parameters)
         {
             var user = new ApplicationUser();
             user.UserName = parameters.UserName;
             var result = await _userManager.CreateAsync(user, parameters.Password);
             if (!result.Succeeded) return BadRequest(result.Errors.FirstOrDefault()?.Description);
 
-            return await Login(new LoginParameters
+            return await Login(new LoginUserDto
             {
                 UserName = parameters.UserName,
                 Password = parameters.Password

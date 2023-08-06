@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
     <PackageReference Include="Fluxor" Version="5.9.0" />
     <PackageReference Include="Fluxor.Blazor.Web" Version="5.9.0" />
     <PackageReference Include="Fluxor.Blazor.Web.ReduxDevTools" Version="5.9.0" />

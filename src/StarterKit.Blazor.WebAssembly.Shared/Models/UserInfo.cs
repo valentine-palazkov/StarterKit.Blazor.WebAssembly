@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StarterKit.Blazor.WebAssembly.Shared
+namespace StarterKit.Blazor.WebAssembly.Shared.Models
 {
     public class UserInfo
     {

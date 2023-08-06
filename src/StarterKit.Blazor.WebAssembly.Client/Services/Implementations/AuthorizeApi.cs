@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using StarterKit.Blazor.WebAssembly.Client.Services.Contracts;
-using StarterKit.Blazor.WebAssembly.Shared;
+using StarterKit.Blazor.WebAssembly.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace StarterKit.Blazor.WebAssembly.Client.Services.Implementations
             _httpClient = httpClient;
         }
 
-        public async Task Login(LoginParameters loginParameters)
+        public async Task Login(LoginUserDto loginParameters)
         {
             //var stringContent = new StringContent(JsonSerializer.Serialize(loginParameters), Encoding.UTF8, "application/json");
             var result = await _httpClient.PostAsJsonAsync("api/Authorize/Login", loginParameters);
@@ -37,7 +37,7 @@ namespace StarterKit.Blazor.WebAssembly.Client.Services.Implementations
             result.EnsureSuccessStatusCode();
         }
 
-        public async Task Register(RegisterParameters registerParameters)
+        public async Task Register(RegisterUserDto registerParameters)
         {
             //var stringContent = new StringContent(JsonSerializer.Serialize(registerParameters), Encoding.UTF8, "application/json");
             var result = await _httpClient.PostAsJsonAsync("api/Authorize/Register", registerParameters);
