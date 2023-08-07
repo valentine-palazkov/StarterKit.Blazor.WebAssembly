@@ -1,0 +1,57 @@
+Blazor Client hosted, .NET 7.0, Progressive Web Application, ASP.Net Core hosted.
+
+Structure:
+
+
+.\src - solution and projects, each project should be in it's own folder
+
+
+AspNetCoreIdentity - to be used for authorization
+
+Implement analyzers support.
+
+There should be reasonable .gitignore that ignores binaries and js that are acquired from CDN.
+
+Namespace:
+
+StartKit.Blazor.WebAssembly
+
+Projects:
+
+--------------------
+StartKit.Blazor.WebAssembly.Client
+
+Authentication + Authorization, Weather Forecast page is accessible by admins only, Counter - by regular user.
+
+Packages:
+
+Fluxor + state support for counter page
+<PackageReference Include="Fluxor.Persist" Version="2.5.2" /> - for state persistance.
+
+FluentValidation framework, integrate support to Login page
+<PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
+
+Switch from css to scss - use WebCompiler: https://marketplace.visualstudio.com/items?itemName=Failwyn.WebCompiler64
+
+use LibMan to get bootstrap
+https://learn.microsoft.com/en-us/aspnet/core/client-side/libman/libman-vs?view=aspnetcore-7.0
+
+
+Integrate PWA updater:
+<PackageReference Include="Toolbelt.Blazor.PWA.Updater" Version="2.1.0.1" />
+
+--------------------
+
+StartKit.Blazor.WebAssembly.Server
+
+- integrate authetnication, protect WeatherForecastController - it should be accessible by users with admin role.
+
+StartKit.Blazor.WebAssembly.Shared (will be created automatically)
+StartKit.Blazor.WebAssembly.DataAccessLayer
+
+Packages:
+
+<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
+
+Sqlite DB should be used, connection string should be a part of appsettings.json
+Migrations should be applied by a special poweshell script file.
