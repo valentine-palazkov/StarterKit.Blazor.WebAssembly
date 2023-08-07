@@ -7,6 +7,6 @@ namespace StarterKit.Blazor.WebAssembly.Client.Services.Contracts
         Task Login(LoginUserDto loginParameters);
         Task Register(RegisterUserDto registerParameters);
         Task Logout();
-        Task<UserInfo> GetUserInfo();
+        Task<UserInfo?> GetUserInfo();
     }
 }

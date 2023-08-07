@@ -34,7 +34,7 @@ namespace StarterKit.Blazor.WebAssembly.Client.States
             NotifyAuthenticationStateChanged(GetAuthenticationStateAsync());
         }
 
-        private async Task<UserInfo> GetUserInfo()
+        private async Task<UserInfo?> GetUserInfo()
         {
             if (_userInfoCache != null && _userInfoCache.IsAuthenticated) return _userInfoCache;
             _userInfoCache = await _authorizeApi.GetUserInfo();
@@ -47,7 +47,7 @@ namespace StarterKit.Blazor.WebAssembly.Client.States
             try
             {
                 var userInfo = await GetUserInfo();
-                if (userInfo.IsAuthenticated)
+                if (userInfo != null && userInfo.IsAuthenticated)
                 {
                     var claims = new[] { new Claim(ClaimTypes.Name, userInfo.UserName) }
                         .Concat(userInfo.ExposedClaims.Select(c => new Claim(c.Key, c.Value)));

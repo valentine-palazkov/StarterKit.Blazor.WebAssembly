@@ -57,21 +57,22 @@ namespace StarterKit.Blazor.WebAssembly.Server.Controllers
         }
 
         [HttpGet]
-        public UserInfo UserInfo()
+        public UserInfo? UserInfo()
         {
             return BuildUserInfo();
         }
 
 
-        private UserInfo BuildUserInfo()
+        private UserInfo? BuildUserInfo()
         {
-            return new UserInfo
-            {
-                IsAuthenticated = User.Identity.IsAuthenticated,
-                UserName = User.Identity.Name,
-                ExposedClaims = User.Claims
+            return User.Identity == null ? null
+                : new UserInfo
+                {
+                    IsAuthenticated = User.Identity.IsAuthenticated,
+                    UserName = User.Identity.Name,
+                    ExposedClaims = User.Claims
                     .ToDictionary(c => c.Type, c => c.Value)
-            };
+                };
         }
     }
 }

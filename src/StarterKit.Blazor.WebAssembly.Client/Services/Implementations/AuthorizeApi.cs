@@ -34,7 +34,7 @@ namespace StarterKit.Blazor.WebAssembly.Client.Services.Implementations
             result.EnsureSuccessStatusCode();
         }
 
-        public async Task<UserInfo> GetUserInfo()
+        public async Task<UserInfo?> GetUserInfo()
         {
             var result = await _httpClient.GetFromJsonAsync<UserInfo>("api/Authorize/UserInfo");
             return result;
