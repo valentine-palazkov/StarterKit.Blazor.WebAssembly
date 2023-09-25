@@ -1,17 +1,6 @@
-﻿using Fluxor;
+﻿using Fluxor.Persist.Storage;
 
-namespace StarterKit.Blazor.WebAssembly.Client.State.Counter
-{
-    [FeatureState]
-    public class CounterState
-    {
-        public int ClickCount { get; }
+namespace StarterKit.Blazor.WebAssembly.Client.State.Counter;
 
-        public CounterState() { }
-        public CounterState(int clickCount)
-        {
-            ClickCount = clickCount;
-        }
-    }
-
-}
+[PersistState]
+public record CounterState(int ClickCount);

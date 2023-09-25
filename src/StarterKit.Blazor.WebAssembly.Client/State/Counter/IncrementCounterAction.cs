@@ -1,6 +1,5 @@
-﻿namespace StarterKit.Blazor.WebAssembly.Client.State.Counter
+﻿namespace StarterKit.Blazor.WebAssembly.Client.State.Counter;
+
+public class IncrementCounterAction
 {
-    public class IncrementCounterAction
-    {
-    }
 }

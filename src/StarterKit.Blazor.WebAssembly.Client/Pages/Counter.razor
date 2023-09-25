@@ -3,6 +3,8 @@
 @using StarterKit.Blazor.WebAssembly.Client.State.Counter
 @inject IDispatcher dispatcher
 @inject IState<CounterState> counterState
+
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
 @attribute [Authorize]
 
 <PageTitle>Counter</PageTitle>

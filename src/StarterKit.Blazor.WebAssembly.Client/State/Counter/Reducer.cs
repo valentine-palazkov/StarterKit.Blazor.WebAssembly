@@ -1,11 +1,10 @@
 ﻿using Fluxor;
 
-namespace StarterKit.Blazor.WebAssembly.Client.State.Counter
+namespace StarterKit.Blazor.WebAssembly.Client.State.Counter;
+
+public static class Reducers
 {
-    public class Reducer
-    {
-        [ReducerMethod]
-        public static CounterState ReduceIncrementCounterAction(CounterState state, IncrementCounterAction action) =>
-        new(clickCount: state.ClickCount + 1);
-    }
+    [ReducerMethod]
+    public static CounterState ReduceIncrementCounterAction(CounterState state, IncrementCounterAction action) =>
+        state with { ClickCount = state.ClickCount + 1 };
 }
